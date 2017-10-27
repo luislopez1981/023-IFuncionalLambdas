@@ -42,9 +42,8 @@ public class Main {
         func = (a, b) -> {
             //Esto es un bloque de código lambda.  
         };
-*/
+         */
         /////////////////////////////////////////////
-        
         List<String> listaNombres = new ArrayList<>();
         listaNombres.add("Gustavo");
         listaNombres.add("Pedro");
@@ -53,30 +52,28 @@ public class Main {
         listaNombres.add("Virginia");
         listaNombres.add("Sergio");
         listaNombres.add("Sara");
-        
-        //ordenar(listaNombres);
-        
-        IFuncional02 interfaz = (a)->(new ArrayList<>(new PriorityQueue<>(a)));
 
-    List<String> ordenada =interfaz.ordenarLista(listaNombres);
-    
-    for (int i=0; i<ordenada.size(); i++){
-        System.out.println("Nombre:" + ordenada.get(i));
+        //ordenar(listaNombres);
+        IFuncional02 interfaz = (a) -> (new ArrayList<>(new PriorityQueue<>(a)));
+
+       
+        //Esto es lo que yo he hecho y no sale bien ordenada.
+        List<String> ordenada = interfaz.ordenarLista(listaNombres);
+
+        for (int i = 0; i < ordenada.size(); i++) {
+            System.out.println("Nombre:" + ordenada.get(i));
+        }
+
     }
 
-}
     public static void ordenar(List<String> lista) {
 
-            PriorityQueue<String> cola = new PriorityQueue<>(lista);
-            
-            
-            do{
-                System.out.println("Nombre: " + cola.poll()); 
-               
-            }while (cola.size()>0);
-                
-            
-            
-    
+        PriorityQueue<String> cola = new PriorityQueue<>(lista);
+
+        do {
+            System.out.println("Nombre: " + cola.poll());
+
+        } while (cola.size() > 0);
+
     }
 }
